@@ -1,10 +1,13 @@
 package com.hcl.entities;
 
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -52,11 +55,10 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password + "]";
 	}
-	
+
 }

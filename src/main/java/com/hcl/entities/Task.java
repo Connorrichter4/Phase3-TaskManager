@@ -7,7 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Task {
@@ -21,14 +24,15 @@ public class Task {
 	private String email;
 	
 	private String description;
-	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDate;
-	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
 	
 	private String severity;
 	
 	@ManyToOne
+	@JoinColumn(name="user_id")
 	private User user;
 
 	public Integer getId() {
@@ -93,6 +97,13 @@ public class Task {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "Task [id=" + id + ", name=" + name + ", email=" + email + ", description=" + description
+				+ ", startDate=" + startDate + ", endDate=" + endDate + ", severity=" + severity + ", user=" + user
+				+ "]";
 	}
 	
 	

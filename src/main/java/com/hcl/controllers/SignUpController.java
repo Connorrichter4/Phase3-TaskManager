@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.hcl.entities.User;
 import com.hcl.services.UserService;
@@ -24,10 +25,10 @@ public class SignUpController {
 	}
 	
 	@PostMapping("/signup")
-	public String postSignUpPage(User user) {
+	public RedirectView postSignUpPage(User user) {
 		logger.info(user.toString());
 		service.addUser(user);
-		return "display-tasks";
+		return new RedirectView("display-tasks");
 	}
 	
 }

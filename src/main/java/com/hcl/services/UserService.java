@@ -29,6 +29,10 @@ public class UserService implements UserDetailsService{
 		logger.info(user.toString());
 		return userRepo.save(user);
 	}
+	
+	public User getUserByName(String name) {
+		return userRepo.findUserByUsername(name);
+	}
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
