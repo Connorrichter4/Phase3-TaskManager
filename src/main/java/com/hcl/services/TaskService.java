@@ -24,6 +24,17 @@ public class TaskService {
     public Task AddTask(Task task) {
         return taskRepository.save(task);
     }
+    
+    public void UpdateTask(Task task) {
+    	Task oldTask = taskRepository.findById(task.getId()).get();
+    	oldTask.setName(task.getName());
+    	oldTask.setStartDate(task.getStartDate());
+    	oldTask.setEndDate(task.getEndDate());
+    	oldTask.setDescription(task.getDescription());
+    	oldTask.setEmail(task.getEmail());
+    	oldTask.setSeverity(task.getSeverity());
+    	taskRepository.save(oldTask);
+    }
 
     public void DeleteTask(Task task) {
         taskRepository.delete(task);

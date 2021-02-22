@@ -18,6 +18,7 @@
 			<form:form id="form" class="border border-3 rounded p-4">
 				<h1 class="text-center">Create Task:</h1>
 				<p>Please enter the details of your task:</p>
+				<label for="name" class="mb-1">Task Name:</label>
 				<div class="input-group mb-3">
 
 					<input type="text" id="name" name="name"
@@ -35,10 +36,18 @@
 
 					<input type="date" id="endDate" name="endDate" class="form-control">
 				</div>
+				<label for="description" class="mb-1">Description:</label>
 				<div class="input-group mb-3">
 
 					<textarea id="description" name="description" rows="5" cols="33"
 						placeholder="Enter description here..." class="form-control"></textarea>
+
+				</div>
+				<label for="email" class="mb-1">Email:</label>
+				<div class="input-group mb-3">
+
+					<input type="text" id="email" name="email"
+						placeholder="Enter an email" class="form-control">
 
 				</div>
 				<label for="severity" class="mb-1">Severity:</label>

@@ -60,9 +60,9 @@ public class TaskController {
 	
 	@PostMapping("/edit-task/{id}")
 	public RedirectView updateTask(Principal principal, Task task, @PathVariable("id") Integer id) {
-		
-		
-		return new RedirectView("display-tasks");
+		logger.info(task.toString());
+		taskService.UpdateTask(task);
+		return new RedirectView("/display-tasks");
 	}
 	
 }
