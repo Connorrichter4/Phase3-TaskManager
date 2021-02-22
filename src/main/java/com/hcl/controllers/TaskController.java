@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -32,6 +33,7 @@ public class TaskController {
 		logger.info(principal.getName());
 		Iterable<Task> tasks = taskService.GetAllTasks();
 		model.put("tasks", tasks);
+		model.put("user", userService.getUserByName(principal.getName()));
 		return "display-tasks";
 	}
 	
@@ -45,6 +47,21 @@ public class TaskController {
 		task.setUser(userService.getUserByName(principal.getName()));
 		logger.info(task.toString());
 		taskService.AddTask(task);
+		return new RedirectView("display-tasks");
+	}
+	
+	@GetMapping("/edit-task/{id}")
+	public String updateTaskForm(ModelMap model, @PathVariable("id") Integer id) {
+		Task task = taskService.GetTaskById(id);
+		logger.info(task.toString());
+		model.put("task", task);
+		return "update-task";
+	}
+	
+	@PostMapping("/edit-task/{id}")
+	public RedirectView updateTask(Principal principal, Task task, @PathVariable("id") Integer id) {
+		
+		
 		return new RedirectView("display-tasks");
 	}
 	
