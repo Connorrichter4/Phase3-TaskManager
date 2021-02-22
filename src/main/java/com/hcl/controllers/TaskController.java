@@ -65,4 +65,12 @@ public class TaskController {
 		return new RedirectView("/display-tasks");
 	}
 	
+	@GetMapping("delete-task/{id}")
+	public RedirectView deleteTask(@PathVariable("id") Integer id) {
+		logger.info(id + " deleting the task with this id");
+		Task task = taskService.GetTaskById(id);
+		taskService.DeleteTask(task);
+		return new RedirectView("/display-tasks");
+	}
+	
 }

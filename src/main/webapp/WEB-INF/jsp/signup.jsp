@@ -37,6 +37,7 @@
 				<div class="d-flex justify-content-center mt-3">
 					<input type="submit" value="Submit">
 				</div>
+				<div class="text-center text-danger">${error}</div>
 			</form:form>
 		</div>
 

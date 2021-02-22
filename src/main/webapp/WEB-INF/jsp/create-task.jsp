@@ -13,9 +13,9 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<div class="d-flex justify-content-center vh-100">
+	<div class="d-flex justify-content-center">
 		<div class="d-flex justify-content-center align-items-center ">
-			<form:form id="form" class="border border-3 rounded p-4">
+			<form:form id="form" class="border border-3 rounded p-4 m-3">
 				<h1 class="text-center">Create Task:</h1>
 				<p>Please enter the details of your task:</p>
 				<label for="name" class="mb-1">Task Name:</label>
