@@ -6,34 +6,56 @@
 <head>
 <meta charset="UTF-8">
 <title>Create New Task</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+	crossorigin="anonymous">
 </head>
 <body>
-	<h1>Create Task</h1>
+	<div class="d-flex justify-content-center vh-100">
+		<div class="d-flex justify-content-center align-items-center ">
+			<form:form id="form" class="border border-3 rounded p-4">
+				<h1 class="text-center">Create Task:</h1>
+				<p>Please enter the details of your task:</p>
+				<div class="input-group mb-3">
 
-	<p>Please enter the details of your task:</p>
+					<input type="text" id="name" name="name"
+						placeholder="Enter a task name" class="form-control">
 
-	<form:form method="post">
-		<label for="name">Task Name:</label> <input type="text" id="name"
-			name="name"><br>
-		<br> <label for="startdate">Start Date:</label> <input
-			type="date" id="startdate" name="startDate"><br>
-		<br> <label for="enddate">End Date:</label> <input type="date"
-			id="enddate" name="endDate"><br>
-		<br> <label for="description">Description:</label>
-		<textarea id="description" name="description" rows="4" cols="50"></textarea>
-		<br>
-		<br> <label for="email">Email:</label> <input type="text"
-			id="email" name="email"><br>
-		<br> <label for="severity">Severity:</label> <select
-			name="severity" id="severity">
-			<option value="high">High</option>
-			<option value="medium">Medium</option>
-			<option value="low">Low</option>
-		</select> <br>
-		<br> <input type="submit" value="Submit"><br>
-		<br> <input type="reset" value="Reset"><br>
-		<br>
+				</div>
+				<label for="startDate" class="mb-1">Start Date:</label>
+				<div class="input-group mb-3">
 
-	</form:form>
+					<input type="date" id="startDate" name="startDate"
+						class="form-control">
+				</div>
+				<label for="endDate" class="mb-1">End Date:</label>
+				<div class="input-group mb-3">
+
+					<input type="date" id="endDate" name="endDate" class="form-control">
+				</div>
+				<div class="input-group mb-3">
+
+					<textarea id="description" name="description" rows="5" cols="33"
+						placeholder="Enter description here..." class="form-control"></textarea>
+
+				</div>
+				<label for="severity" class="mb-1">Severity:</label>
+				<div class="input-group mb-2">
+
+					<select name="severity" id="severity" class="form-control">
+						<option value="high">High</option>
+						<option value="medium">Medium</option>
+						<option value="low">Low</option>
+					</select>
+				</div>
+				<div class="d-flex justify-content-center mt-3">
+					<input type="submit" value="Submit">
+				</div>
+			</form:form>
+		</div>
+
+	</div>
 </body>
 </html>

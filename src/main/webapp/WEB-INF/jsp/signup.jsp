@@ -6,30 +6,40 @@
 <head>
 <meta charset="UTF-8">
 <title>Sign Up Page</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+	crossorigin="anonymous">
 </head>
 <body>
-	<h1>Sign Up</h1>
+	<div class="d-flex justify-content-center vh-100">
+		<div class="d-flex justify-content-center align-items-center ">
+			<form:form id="form" class="border border-3 rounded p-4">
+				<h1 class="text-center">Sign Up:</h1>
+				<p>Please enter a username, email and password:</p>
+				<div class="input-group mb-3">
 
-	<p>Please enter a username, email and password:</p>
+					<input type="text" id="username" name="username"
+						placeholder="Enter a username" class="form-control">
 
-	<form:form method="post">
-		<label for="username">Username:</label>
-		<input type="text" id="username" name="username">
-		<br>
-		<br>
-		<label for="email">Email:</label>
-		<input type="text" id="email" name="email">
-		<br>
-		<br>
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="password">
-		<br>
-		<br>
-		<input type="submit" value="Submit">
-		<br>
-		<br>
+				</div>
+				<div class="input-group mb-3">
 
+					<input type="text" id="email" name="email"
+						placeholder="Enter an email" class="form-control">
+				</div>
+				<div class="input-group mb-2">
 
-	</form:form>
+					<input type="password" id="password" name="password"
+						placeholder="Enter a password" class="form-control">
+				</div>
+				<div class="d-flex justify-content-center mt-3">
+					<input type="submit" value="Submit">
+				</div>
+			</form:form>
+		</div>
+
+	</div>
 </body>
 </html>
