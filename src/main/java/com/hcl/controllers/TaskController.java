@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.hcl.entities.Task;
@@ -66,11 +67,12 @@ public class TaskController {
 	}
 	
 	@GetMapping("delete-task/{id}")
-	public RedirectView deleteTask(@PathVariable("id") Integer id) {
+	public ModelAndView deleteTask(ModelMap model, @PathVariable("id") Integer id) {
 		logger.info(id + " deleting the task with this id");
 		Task task = taskService.GetTaskById(id);
 		taskService.DeleteTask(task);
-		return new RedirectView("/display-tasks");
+		model.put("deleted", task.getName());
+		return new ModelAndView("redirect:/display-tasks", model);
 	}
 	
 }

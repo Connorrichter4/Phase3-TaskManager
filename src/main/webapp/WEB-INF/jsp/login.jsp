@@ -12,8 +12,21 @@
 	rel="stylesheet"
 	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
 	crossorigin="anonymous">
+<script type="text/javascript">
+	
+	window.setTimeout(function() {
+		document.getElementById('alert').style.display = 'none';	
+	}, 2500);
+	
+</script>
 </head>
-<body>
+<body class="p-2">
+	<c:if test="${param.logout != null}">
+		<div id="alert" class="alert alert-success" role="alert">
+		
+			<strong>Success!</strong> You have been signed in successfully!
+		</div>
+	</c:if>
 	<div class="d-flex justify-content-center vh-100">
 		<div class="d-flex justify-content-center align-items-center ">
 			<form:form id="form" class="border border-3 rounded p-4">
@@ -32,9 +45,6 @@
 				</div>
 				<c:if test='${param.error != null}'>
 					<div class="text-center text-danger">Incorrect Credentials!</div>
-				</c:if>
-				<c:if test="${param.logout != null}">
-					<div class="text-center text-danger">Signed out</div>
 				</c:if>
 				<div class="d-flex justify-content-center mt-3">
 					<input type="submit" value="Submit">

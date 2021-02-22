@@ -13,23 +13,35 @@
 	rel="stylesheet"
 	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
 	crossorigin="anonymous">
-<script src="https://kit.fontawesome.com/f8ebbde80f.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/f8ebbde80f.js"
+	crossorigin="anonymous"></script>
+<script type="text/javascript">
+	window.setTimeout(function() {
+		document.getElementById('alert').style.display = 'none';
+	}, 2500);
+</script>
 </head>
 <body class="p-2">
-	
+
+	<c:if test="${param.deleted != null}">
+		<div id="alert" class="alert alert-success" role="alert">
+			<strong>Success!</strong> Task deleted successfully!
+		</div>
+	</c:if>
+
 	<div class="d-flex justify-content-between p-2">
 		<h1>Welcome! Displaying Tasks Below</h1>
-		
+
 		<form:form action="logout" method="post">
 			<input type="submit" class="btn btn-dark" value="Sign Out" />
 		</form:form>
 	</div>
-	
+
 	<div class="p-2 mb-2">
 		<a href="/create-task"><i
 			class="fas fa-plus-square fa-2x text-dark"></i></a>
 	</div>
-	
+
 	<table class="table table-striped table-dark">
 		<thead>
 			<tr>
@@ -56,8 +68,10 @@
 					<td>${task.user.username}</td>
 					<c:choose>
 						<c:when test="${task.user.id == user.id}">
-							<td><a href="/edit-task/${task.id}"><i style="color:white" class="far fa-edit"></i></a></td>
-							<td><a href="/delete-task/${task.id}"><i style="color:white" class="fas fa-trash"></i></a></td>
+							<td><a href="/edit-task/${task.id}"><i
+									style="color: white" class="far fa-edit"></i></a></td>
+							<td><a href="/delete-task/${task.id}"><i
+									style="color: white" class="fas fa-trash"></i></a></td>
 						</c:when>
 						<c:otherwise>
 							<td></td>
