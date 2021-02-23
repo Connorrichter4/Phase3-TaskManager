@@ -46,12 +46,28 @@ Important Notes:
 
 ### Login Page
 
+![Login-page](https://user-images.githubusercontent.com/58124052/108869527-e880f900-75bc-11eb-8c35-56feb749eca8.png)
+
 ### Sign Up Page
 
-### Display All Tasks
+![Signup-page](https://user-images.githubusercontent.com/58124052/108869529-e9198f80-75bc-11eb-98c0-665fbedc7152.png)
 
-### Create Tasks
+### Logout Page
 
-### Update Tasks
+![logout-page](https://user-images.githubusercontent.com/58124052/108869530-e9198f80-75bc-11eb-94ef-2151ff47b136.png)
 
-### Delete Tasks
+### Display Tasks Page
+
+![display-tasks](https://user-images.githubusercontent.com/58124052/108869531-e9198f80-75bc-11eb-80ee-9d33e66da97a.png)
+
+### Create Task Page
+
+![create-task](https://user-images.githubusercontent.com/58124052/108869533-e9198f80-75bc-11eb-9e9b-a3e6d7176c7c.png)
+
+### Update Task Page
+
+![update-task](https://user-images.githubusercontent.com/58124052/108869534-e9198f80-75bc-11eb-9494-13552886380b.png)
+
+### Delete Task Alert
+
+![deleted-task](https://user-images.githubusercontent.com/58124052/108869535-e9b22600-75bc-11eb-8b6b-1b3fce88839f.png)
